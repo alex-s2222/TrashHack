@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+    web:
+      build: .
+      volumes:
+        - .:/app
+      ports:
+        - "8000:8000"
+      depends_on:
+        - db
+      environment:
+        DATABASE_URL: "mysql+asyncmy://root:wp@db:3306/hackchange"
+      networks:
+        - my_network
+    db:
+      image: mysql:8.0
+      command: --default-authentication-plugin=mysql_native_password
+      volumes:
+        - ./dump.sql:/docker-entrypoint-initdb.d
+      environment:
+        MYSQL_ROOT_PASSWORD: wp
+        MYSQL_DATABASE: hackchange
+      ports:
+        - "3307:3306"
+      networks:
+        - my_network
+
+volumes:
+  mysql_data:
+
+networks:
+  my_network:
