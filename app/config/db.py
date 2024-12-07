@@ -10,7 +10,7 @@ def get_db_url():
     # DB_PORT = os.environ.get('PORT', '3306')
     # DB_NAME =  os.environ.get('DB', 'hackchange')
     DB_USER = "root"
-    DB_PASSWORD = ""
+    DB_PASSWORD = "eY7m76S_rP"
     DB_HOST = "localhost"
     DB_NAME = "hackchange"
     DB_PORT = "3306"

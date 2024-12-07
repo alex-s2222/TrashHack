@@ -15,6 +15,7 @@ ssl_object.verify_mode = ssl.CERT_NONE
 
 DATABASE_URL =  get_db_url()
 engine = create_async_engine(DATABASE_URL)
+
 async_session = async_sessionmaker(engine, class_=AsyncSession, expire_on_commit=False)
 
 

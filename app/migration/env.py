@@ -13,7 +13,7 @@ from os.path import dirname, abspath
 
 sys.path.insert(0, dirname(dirname(abspath(__file__))))
 
-from app.models.user import User
+from app.models.user import User, Status
 from app.database.database import DATABASE_URL, Base
 
 # this is the Alembic Config object, which provides
